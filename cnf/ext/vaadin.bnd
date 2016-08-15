@@ -1,0 +1,7 @@
+-plugin.vaadin: \
+\
+	aQute.bnd.repository.maven.provider.MavenBndRepository; \
+		releaseUrl= http://repo1.maven.org/maven2/; \
+		index=${.}/vaadin.maven; \
+		readOnly=true; \
+		name="Vaadin"

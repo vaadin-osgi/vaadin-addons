@@ -1,0 +1,12 @@
+#
+#  GOGO COMMAND BUNDLE (osgi) 
+#
+
+Bundle-Description: \
+	Provides the addressbook example. \
+
+Private-Package:  \
+	com.vaadin.osgi.example.addressbook
+	
+	
+-includeresource: {readme.md}

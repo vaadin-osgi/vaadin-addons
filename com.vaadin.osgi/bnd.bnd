@@ -1,0 +1,34 @@
+#
+#  DEFAULTS
+#
+
+Bundle-Version:					1.0.0.${tstamp}
+Bundle-Description: 				\
+	This project contains a complete example with API, provider, and JUnit test code. \
+	\
+	${warning;Please update this Bundle-Description in bnd.bnd}
+
+	
+-buildpath: \
+	osgi.enroute.base.api;version=1.0,\
+	com.vaadin.themes;version=7.6.8,\
+	com.vaadin.server;version=7.6.8,\
+	com.vaadin.shared;version=7.6.8,\
+	org.jsoup;version=1.9,\
+	com.vaadin.client-compiled;version=7.6,\
+	org.apache.felix.webconsole,\
+	osgi.enroute.webconsole.xray.provider
+
+-testpath: \
+	osgi.enroute.junit.wrapper;version=4.12
+
+-sub:  \
+	*.bnd
+	
+-buildpath: \
+	osgi.enroute.base.api;version=1.0,\
+	com.vaadin.themes;version=7.6.8,\
+	com.vaadin.server;version=7.6.8,\
+	com.vaadin.shared;version=7.6.8,\
+	org.jsoup;version=1.9,\
+	com.vaadin.client-compiled;version=7.6
