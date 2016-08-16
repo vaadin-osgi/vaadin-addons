@@ -50,7 +50,7 @@ import com.vaadin.osgi.provider.ContextPathFactory.Config;
  * This means, that configs are translated to proper registered
  * {@link HttpWhiteboardConstants OSGi Http Whiteboard} services.
  */
-@Component(immediate = true, configurationPolicy = ConfigurationPolicy.REQUIRE)
+@Component(immediate = true, configurationPolicy = ConfigurationPolicy.REQUIRE, configurationPid={"com.vaadin.osgi.provider.contextPathFactory"})
 @Designate(ocd = Config.class, factory = true)
 public class ContextPathFactory {
 
