@@ -8,12 +8,12 @@ Bundle-Description: \
 	${warning;Please update this Bundle-Description in com.vaadin.osgi/api.bnd}
 	
 	
-Export-Package:  \
-	com.vaadin.osgi.api
+Export-Package: \
+	com.vaadin.osgi.api,\
+	com.vaadin.osgi.dto
 
 Require-Capability: \
 	compile-only
-
 
 -includeresource: {readme.md}
 

@@ -10,7 +10,6 @@ Bundle-Description: \
 Export-Package:  \
 	com.vaadin.osgi.api
 
-Private-Package:  \
-	com.vaadin.osgi.provider
+Private-Package: com.vaadin.osgi.provider
 
 -includeresource: {readme.md}
