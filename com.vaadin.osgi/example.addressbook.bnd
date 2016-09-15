@@ -9,4 +9,4 @@ Private-Package:  \
 	com.vaadin.osgi.example.addressbook
 	
 	
--includeresource: {readme.md}
+-includeresource: {readme.md}, {configuration/configuration.json=configuration/configuration.json}

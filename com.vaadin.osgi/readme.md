@@ -56,6 +56,21 @@ The Vaadin Addon uses the enRoute simple configurer. This bundle is aware about 
 
 On startup of the server, the enRoute simple configurer finds the configuration and will do all required calls to the ConfigAdmin for you.
 
+
+Create a file /configuration/configuration.json in any bundle. And put in following content. Note, that the `service.pid` is unique. Every configuration requires their unique pid. The `service.factoryPid` is a constant.
+
+	[
+		{
+			"description":			"Config for Addressbook Sample",
+			"service.pid":			"com.vaadin.osgi.sample.addressbook",
+			"service.factoryPid":		"com.vaadin.osgi.provider",
+			"configName":			"sample.addressbook",
+			"alias":			"/addr",
+			"contextPath":			"/myApp"
+		}
+	]
+
+
 #### API of ConfigAdmin
 If you want to have control about the Vaadin instances in your code, just use the API of the ConfigAdmin.
 
