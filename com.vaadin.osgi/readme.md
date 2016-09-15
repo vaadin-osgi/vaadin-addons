@@ -61,12 +61,12 @@ Create a file /configuration/configuration.json in any bundle. And put in follow
 
 	[
 		{
-			"description":			"Config for Addressbook Sample",
-			"service.pid":			"com.vaadin.osgi.sample.addressbook",
+			"description":				"Config for Addressbook Sample",
+			"service.pid":				"com.vaadin.osgi.sample.addressbook",
 			"service.factoryPid":		"com.vaadin.osgi.provider",
-			"configName":			"sample.addressbook",
-			"alias":			"/addr",
-			"contextPath":			"/myApp"
+			"configName":				"sample.addressbook",
+			"alias":					"/addr",
+			"contextPath":				"/myApp"
 		}
 	]
 
