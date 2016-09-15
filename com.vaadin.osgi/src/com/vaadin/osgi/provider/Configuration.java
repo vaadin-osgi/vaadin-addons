@@ -8,7 +8,7 @@ import com.vaadin.osgi.api.Constants;
 @ObjectClassDefinition(name = "Vaadin Server Config", description = "Configures the Vaadin Server")
 public @interface Configuration {
 
-	@AttributeDefinition(name = "config", defaultValue = Constants.DEFAULT_CONFIG, description = "The unique name of the config. Add the property com.vaadin.config to the UI component to address the proper server instance.", required = true)
+	@AttributeDefinition(name = "config name", defaultValue = Constants.DEFAULT_CONFIG, description = "The unique name of the config. Add the property com.vaadin.config to the UI component to address the proper server instance.", required = true)
 	String configName() default Constants.DEFAULT_CONFIG;
 
 	@AttributeDefinition(name = "description", defaultValue = "", description = "Description about the application", required = false)

@@ -16,4 +16,3 @@ Require-Capability: \
 	compile-only
 
 -includeresource: {readme.md}
-
