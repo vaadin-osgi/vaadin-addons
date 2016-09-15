@@ -27,8 +27,8 @@ To create your own application, you need to define 2 things.
  
  Additionally you need to add two properties to the service registration:
  
-*   Constants.PROP__VAADIN_UI_CLASS - the value must be the fully qualified name of the UI class. The property is a workaround to provide the UiProvider with the UI class.
-*   Constants.PROP__VAADIN_CONFIG - a unique ID which wires the UI class with the configuration from ConfigAdmin.
+*   `Constants.PROP__VAADIN_UI_CLASS` - the value must be the fully qualified name of the UI class. The property is a workaround to provide the UiProvider with the UI class.
+*   `Constants.PROP__VAADIN_CONFIG` - a unique ID which wires the UI class with the configuration from ConfigAdmin.
 
 ### Configuration
 There are 3 ways available to create a proper configuration:
@@ -42,9 +42,11 @@ There are 3 ways available to create a proper configuration:
 Its a pretty simple way to configure a Vaadin application. If you have implemented the UI class, then remember the value of the property `Constants.PROP__VAADIN_CONFIG` 
 Start your OSGi application and point a browser to <http://localhost:8080/system/console/configMgr>. Use "admin" and "admin" for the credentials.
 
-You find a row called "Vaadin Server Config". Press the "add" button.
+You find a row called "Vaadin Server Config". Press the "add" button. Then following form is shown. 
 
-A form is shown. Put the value of `Constants.PROP__VAADIN_CONFIG` (eg. sample.addressbook) into the first field "config name" and specify an alias; eg. "/addr".
+![Apache felix webconsole](docu/WebConsole.png "Apache felix webconsole") 
+
+Put the value of `Constants.PROP__VAADIN_CONFIG` (eg. sample.addressbook) into the first field "config name" and specify an alias; eg. "/addr".
 All other fields are optional. If you press the "save" button, your Vaadin application will startup.
 
 Point your browser to <http://localhost:8080/addr> and your Vaadin UI shows up. If you specified a context path, you also need to add the context path to your URL. Eg. <http://localhost:8080/myapp/addr>.
