@@ -2,6 +2,9 @@ package com.vaadin.osgi.provider;
 
 import java.util.Properties;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.vaadin.server.Constants;
 import com.vaadin.server.DefaultDeploymentConfiguration;
 import com.vaadin.server.DeploymentConfiguration;
@@ -14,6 +17,8 @@ import com.vaadin.server.VaadinSession;
 
 @SuppressWarnings("serial")
 public class OSGiServlet extends VaadinServlet {
+
+	static final Logger LOGGER = LoggerFactory.getLogger(OSGiServlet.class);
 
 	private UIProvider uiProvider;
 	private Configuration config;
@@ -64,7 +69,7 @@ public class OSGiServlet extends VaadinServlet {
 						Class<?> loadClass = OSGiServlet.class.getClassLoader().loadClass(name);
 						return loadClass;
 					} catch (Exception e) {
-						e.printStackTrace();
+						LOGGER.error("{}", e);
 						throw e;
 					}
 				}
@@ -72,7 +77,7 @@ public class OSGiServlet extends VaadinServlet {
 
 			return service;
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.error("{}", e);
 			throw e;
 		}
 	}

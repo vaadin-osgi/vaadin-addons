@@ -1,10 +1,11 @@
 package com.vaadin.osgi.api;
 
-public interface Constants {
+public interface OSGiConstants {
 
 	/**
 	 * This property is required to map the UI class to the Vaadin Server. It
-	 * must match the value in the configuration.
+	 * must be defined in the UI Component as property and also in the
+	 * configuration which uses the UI-class.
 	 */
 	String PROP__VAADIN_CONFIG = "com.vaadin.config";
 
@@ -15,8 +16,8 @@ public interface Constants {
 	String PROP__VAADIN_UI_CLASS = "uiClass";
 
 	/**
-	 * The default name of the config.
+	 * The default value for {@link #PROP__VAADIN_CONFIG}.
 	 */
-	String DEFAULT_CONFIG = "config.default";
+	String DEFAULT_CONFIG_NAME = "config.default";
 
 }

@@ -3,14 +3,9 @@
 #
 
 Bundle-Description: \
-	 API \
-	\
-	${warning;Please update this Bundle-Description in com.vaadin.osgi/api.bnd}
+	 API for com.vaadin.osgi.
 	
-	
-Export-Package: \
-	com.vaadin.osgi.api,\
-	com.vaadin.osgi.dto
+Export-Package: com.vaadin.osgi.api
 
 Require-Capability: \
 	compile-only

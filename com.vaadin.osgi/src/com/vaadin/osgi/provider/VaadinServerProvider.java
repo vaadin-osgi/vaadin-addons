@@ -25,7 +25,7 @@ import org.osgi.util.tracker.ServiceTrackerCustomizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vaadin.osgi.api.Constants;
+import com.vaadin.osgi.api.OSGiConstants;
 import com.vaadin.ui.UI;
 
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
@@ -82,7 +82,7 @@ public class VaadinServerProvider {
 	}
 
 	protected Filter createUIFilter(Configuration config) {
-		String filter = String.format("(&(objectClass=com.vaadin.ui.UI)(%s=%s))", Constants.PROP__VAADIN_CONFIG,
+		String filter = String.format("(&(objectClass=com.vaadin.ui.UI)(%s=%s))", OSGiConstants.PROP__VAADIN_CONFIG,
 				config.configName());
 		try {
 			return context.getBundleContext().createFilter(filter);
@@ -90,6 +90,23 @@ public class VaadinServerProvider {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	/**
+	 * Activates the Vaadin server based on the config.
+	 * 
+	 * @param serviceObjects
+	 */
+	protected void doActivateVaadinServer(ServiceObjects<UI> serviceObjects) {
+
+		// first, do activate the context path
+		doActivateContextPath();
+
+		// activates the static resources servlet
+		doActivateStaticResources();
+
+		// activates the vaadin servlet
+		doActivateVaadinServlet(serviceObjects);
 	}
 
 	/**
@@ -128,23 +145,6 @@ public class VaadinServerProvider {
 		LOGGER.debug("Registered static resources '/VAADIN' under contextpath '" + config.contextPath() + "'");
 	}
 
-	/**
-	 * Activates the Vaadin server based on the config.
-	 * 
-	 * @param serviceObjects
-	 */
-	protected void doActivateVaadinServer(ServiceObjects<UI> serviceObjects) {
-
-		// first, do activate the context path
-		doActivateContextPath();
-
-		// activates the static resources servlet
-		doActivateStaticResources();
-
-		// activates the vaadin servlet
-		doActivateVaadinServlet(serviceObjects);
-	}
-
 	protected void doActivateVaadinServlet(ServiceObjects<UI> serviceObjects) {
 		OSGiServlet servlet = new OSGiServlet(new OSGiUIProvider(serviceObjects), config);
 		// Translate the config to proper http whiteboard properties
@@ -161,15 +161,7 @@ public class VaadinServerProvider {
 	}
 
 	protected void doDeactivateVaadinServer() {
-		if (resourcesReg != null) {
-			resourcesReg.unregister();
-			resourcesReg = null;
-		}
-
-		if (servletReg != null) {
-			servletReg.unregister();
-			servletReg = null;
-		}
+		shutdownServices();
 	}
 
 	@Deactivate
@@ -177,6 +169,10 @@ public class VaadinServerProvider {
 		uiTracker.close();
 		uiTracker = null;
 
+		shutdownServices();
+	}
+
+	private void shutdownServices() {
 		if (resourcesReg != null) {
 			resourcesReg.unregister();
 			resourcesReg = null;
@@ -186,9 +182,11 @@ public class VaadinServerProvider {
 			servletReg.unregister();
 			servletReg = null;
 		}
-
-		contextReg.unregister();
-		contextReg = null;
+		
+		if (contextReg != null) {
+			contextReg.unregister();
+			contextReg = null;
+		}
 	}
 
 	/**

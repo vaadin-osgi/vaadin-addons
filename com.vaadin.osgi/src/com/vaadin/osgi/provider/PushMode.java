@@ -2,9 +2,6 @@ package com.vaadin.osgi.provider;
 
 /**
  * The mode of bidirectional ("push") communication that is in use.
- * 
- * @author florianpirchner
- *
  */
 public enum PushMode {
 

@@ -5,7 +5,7 @@
 Bundle-Description: \
 	The provider bundle for com.vaadin.osgi. \
 	\
-	${warning;Please update this Bundle-Description in com.vaadin.osgi/api.bnd}
+	It uses configuration from ConfigAdmin to register proper Servlets in the background.
 	
 Export-Package:  \
 	com.vaadin.osgi.api

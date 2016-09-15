@@ -3,13 +3,13 @@ package com.vaadin.osgi.provider;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
-import com.vaadin.osgi.api.Constants;
+import com.vaadin.osgi.api.OSGiConstants;
 
 @ObjectClassDefinition(name = "Vaadin Server Config", description = "Configures the Vaadin Server")
 public @interface Configuration {
 
-	@AttributeDefinition(name = "config name", defaultValue = Constants.DEFAULT_CONFIG, description = "The unique name of the config. Add the property com.vaadin.config to the UI component to address the proper server instance.", required = true)
-	String configName() default Constants.DEFAULT_CONFIG;
+	@AttributeDefinition(name = "config name", defaultValue = OSGiConstants.DEFAULT_CONFIG_NAME, description = "The unique name of the config. Add the property com.vaadin.config to the UI component to address the proper server instance.", required = true)
+	String configName() default OSGiConstants.DEFAULT_CONFIG_NAME;
 
 	@AttributeDefinition(name = "description", defaultValue = "", description = "Description about the application", required = false)
 	String description() default "";
@@ -19,9 +19,6 @@ public @interface Configuration {
 
 	@AttributeDefinition(name = "alias", defaultValue = "/", description = "Alias to access application", required = true)
 	String alias() default "/";
-
-//	@AttributeDefinition(name = "uiClass", defaultValue = "", description = "The fully qualified name of the UI class. It is used to wire the server with the UI", required = true)
-//	String uiClassName() default "";
 
 	@AttributeDefinition(name = "widgetset", defaultValue = "", description = "The widgetset that should be used. Or empty for default widgetset.", required = false)
 	String widgetset() default "";

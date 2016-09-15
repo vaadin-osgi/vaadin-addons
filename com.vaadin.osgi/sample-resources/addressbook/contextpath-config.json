@@ -1,9 +1,0 @@
-I[
-   {
-   	  "comment":							"Contextpath '/addressbook'",
-      "service.factoryPid":					"com.vaadin.osgi.provider.contextPathFactory.addressbook",
-      "service.pid":						"com.vaadin.osgi.example.addressbook",
-	  "contextName":						"addressbook",
-	  "contextPath":						"/addressbook",
-   }
-]

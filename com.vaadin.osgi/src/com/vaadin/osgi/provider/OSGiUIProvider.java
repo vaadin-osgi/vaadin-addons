@@ -5,7 +5,7 @@ import org.osgi.framework.ServiceObjects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vaadin.osgi.api.Constants;
+import com.vaadin.osgi.api.OSGiConstants;
 import com.vaadin.osgi.provider.OSGiServlet.LocalVaadinServletService;
 import com.vaadin.server.ClientConnector.DetachEvent;
 import com.vaadin.server.ClientConnector.DetachListener;
@@ -35,7 +35,7 @@ public class OSGiUIProvider extends UIProvider {
 		Bundle registringBundle = serviceObjects.getServiceReference().getBundle();
 		try {
 			_uiClass = (Class<UI>) registringBundle.loadClass(
-					(String) serviceObjects.getServiceReference().getProperty(Constants.PROP__VAADIN_UI_CLASS));
+					(String) serviceObjects.getServiceReference().getProperty(OSGiConstants.PROP__VAADIN_UI_CLASS));
 		} catch (ClassNotFoundException e) {
 			LOGGER.error("{}", e);
 		}
@@ -58,9 +58,7 @@ public class OSGiUIProvider extends UIProvider {
 			@Override
 			public void detach(DetachEvent event) {
 				serviceObjects.ungetService(ui);
-				if (LOGGER.isDebugEnabled()) {
-					LOGGER.debug("unregistered UI " + ui.toString());
-				}
+				LOGGER.debug("unregistered UI " + ui.toString());
 			}
 		});
 		return ui;

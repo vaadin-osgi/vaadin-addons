@@ -36,7 +36,6 @@ public class StaticResources extends HttpServlet {
 
 			path = uri.getPath();
 			LOGGER.debug("Accessing resource: " + path);
-			System.out.print(path);
 
 			for (Bundle b : context.getBundles()) {
 				URL entry = b.getEntry(path);
@@ -46,7 +45,6 @@ public class StaticResources extends HttpServlet {
 						byte[] buffer = new byte[10000];
 						for (int n = in.read(buffer); n > 0; n = in.read(buffer))
 							resp.getOutputStream().write(buffer, 0, n);
-
 						return;
 					}
 				}
