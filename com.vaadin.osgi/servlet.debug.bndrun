@@ -2,7 +2,7 @@
 # 	DEBUG LAUNCH SPECFICATION 
 #
 
--include: ~com.vaadin.osgi.bndrun
+-include: ~com.vaadin.osgi.servlet.bndrun
 
 -runrequires.debug:  \
 	${debug-bundles}

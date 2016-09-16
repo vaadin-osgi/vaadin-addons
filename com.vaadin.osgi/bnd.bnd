@@ -7,7 +7,10 @@ Bundle-Description: 				\
 	This project contains a complete example with API, provider, and JUnit test code. \
 	\
 	${warning;Please update this Bundle-Description in bnd.bnd}
-
+Bundle-License: \
+	https://opensource.org/licenses/Apache-2.0; \
+	link=http://www.apache.org/licenses/LICENSE-2.0; \
+	description="Apache Software License 2.0"
 	 
 -buildpath: \
 	osgi.enroute.base.api;version=1.0,\
