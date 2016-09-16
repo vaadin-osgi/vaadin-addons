@@ -31,3 +31,7 @@ Bundle-Description: 				\
 	com.vaadin.shared;version=7.6.8,\
 	org.jsoup;version=1.9,\
 	com.vaadin.client-compiled;version=7.6
+
+-pom: \
+	groupid	=	com.vaadin.osgi,\
+	version =	${versionmask;===;${@version}}-SNAPSHOT

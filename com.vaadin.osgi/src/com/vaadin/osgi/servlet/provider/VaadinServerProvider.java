@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.vaadin.osgi.provider;
+package com.vaadin.osgi.servlet.provider;
 
 import java.util.Dictionary;
 import java.util.Hashtable;
