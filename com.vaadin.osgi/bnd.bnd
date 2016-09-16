@@ -8,7 +8,7 @@ Bundle-Description: 				\
 	\
 	${warning;Please update this Bundle-Description in bnd.bnd}
 
-	
+	 
 -buildpath: \
 	osgi.enroute.base.api;version=1.0,\
 	com.vaadin.themes;version=7.6.8,\

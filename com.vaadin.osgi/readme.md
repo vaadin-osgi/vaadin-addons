@@ -14,8 +14,8 @@ To create your own application, you need to define 2 things:
 ### UI-Class
 
 	@Component(scope = ServiceScope.PROTOTYPE, service = UI.class, property = {
-		Constants.PROP__VAADIN_UI_CLASS + "=com.vaadin.osgi.example.addressbook.AddressBookUi",
-		Constants.PROP__VAADIN_CONFIG + "=sample.addressbook" })
+		OSGiConstants.PROP__VAADIN_UI_CLASS + "=com.vaadin.osgi.example.addressbook.AddressBookUi",
+		OSGiConstants.PROP__VAADIN_CONFIG + "=sample.addressbook" })
 	public class AddressBookUi extends UI {
 		@Override
 		protected void init(VaadinRequest request) {
@@ -54,7 +54,10 @@ All other fields are optional. If you press the "save" button, your Vaadin appli
 Point your browser to <http://localhost:8080/addr> and your Vaadin UI shows up. If you specified a context path, you also need to add the context path to your URL, e.g. <http://localhost:8080/myapp/addr>.
 
 #### JSON file
-The Vaadin Addon uses the enRoute simple configurer. This bundle is aware about JSON files located in the folder /configuration. You need to specify the the values from the configuration (same as in webconsole) in the JSON file.
+The Vaadin Addon uses the enRoute simple configurer: 
+<https://github.com/osgi/osgi.enroute.bundles/tree/master/osgi.enroute.configurer.simple.provider>  
+
+This bundle is aware about JSON files located in the folder /configuration. You need to specify the the values from the configuration (same as in webconsole) in the JSON file.
 
 On startup of the server, the enRoute simple configurer finds the configuration and will do all required calls to the ConfigAdmin for you.
 
@@ -73,9 +76,14 @@ Create a file /configuration/configuration.json in any bundle. And put in the fo
 
 
 #### API of ConfigAdmin
-If you want to have control about the Vaadin instances in your code, just use the API of the ConfigAdmin (see <http://felix.apache.org/documentation/subprojects/apache-felix-web-console/web-console-restful-api.html> for details).
+If you want to have control about the Vaadin instances in your code, just use the API of the ConfigAdmin (see OSGi compendium specification for details).
 
 
 ## References
+
+The sourcecode for this addon is available under: <https://github.com/vaadin-osgi/vaadin-addons/tree/master/com.vaadin.osgi>
+
 Apache Felix web console: <http://felix.apache.org/documentation/subprojects/apache-felix-web-console.html>
+
+OSGi core and compendium spec: <https://www.osgi.org/developer/downloads/release-6/release-6-download/>
 
