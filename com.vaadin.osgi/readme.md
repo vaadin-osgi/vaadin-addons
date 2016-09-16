@@ -82,6 +82,7 @@ If you want to have control about the Vaadin instances in your code, just use th
 This project uses BndTools for development.
 
 Setup your Eclipse IDE:
+
 1. Install Eclipse Neon for RCP- and RAP-Developer <http://www.eclipse.org/downloads/>
 2. Inside eclipse "Help -> Marketplace" and install BndTools
 3. Clone the repository
