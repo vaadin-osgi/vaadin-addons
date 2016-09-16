@@ -5,6 +5,7 @@
       "service.factoryPid":					"com.vaadin.osgi.provider",
       "configName":							"sample.addressbook",
 	  "alias":								"/addr",
-	  "contextPath":						"/myApp"
+	  "contextPath":						"/myApp",
+	  "pushMode":							"AUTOMATIC"
    }
 ]
