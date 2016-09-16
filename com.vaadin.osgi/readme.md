@@ -89,6 +89,16 @@ Setup your Eclipse IDE:
 
 After these steps you should have a clean workspace without any errors. 
 
+## Debug addressbook example
+To debug the application... 
+
+1. Open the `servlet.debug.bndrun`
+2. Press "resolve" -> everything should be fine
+3. Press the debug icon
+
+The configuration is done by  `sample-resources/addressbook/configuration.json`. You may change it using the WebConsole.
+
+Point your browser to <http://localhost:8080/myApp/addr>.
 
 ## References
 

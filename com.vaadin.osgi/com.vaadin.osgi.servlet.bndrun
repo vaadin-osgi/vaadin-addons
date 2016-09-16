@@ -28,7 +28,7 @@ JPM-Command:				osgi
 	com.vaadin.external.atmosphere.runtime;version='[2.2.7,2.2.8)',\
 	com.vaadin.external.org.slf4j;version='[1.6.1,1.6.2)',\
 	com.vaadin.osgi.example.addressbook;version=snapshot,\
-	com.vaadin.osgi.provider;version=snapshot,\
+	com.vaadin.osgi.servlet.provider;version=snapshot,\
 	com.vaadin.push;version='[7.6.8,7.6.9)',\
 	com.vaadin.server;version='[7.6.8,7.6.9)',\
 	com.vaadin.shared;version='[7.6.8,7.6.9)',\
