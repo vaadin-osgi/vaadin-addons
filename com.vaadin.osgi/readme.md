@@ -78,6 +78,17 @@ Create a file /configuration/configuration.json in any bundle. And put in the fo
 #### API of ConfigAdmin
 If you want to have control about the Vaadin instances in your code, just use the API of the ConfigAdmin (see OSGi compendium specification for details).
 
+## Setup Workspace in Eclipse
+This project uses BndTools for development.
+
+Setup your Eclipse IDE:
+1. Install Eclipse Neon for RCP- and RAP-Developer <http://www.eclipse.org/downloads/>
+2. Inside eclipse "Help -> Marketplace" and install BndTools
+3. Clone the repository
+4. Import the cnf and com.vaadin.osgi project into the workspace
+
+After these steps you should have a clean workspace without any errors. 
+
 
 ## References
 
