@@ -5,8 +5,7 @@
 
 Bundle-Version:				1.0.0.${tstamp}
 Bundle-SymbolicName:		com.vaadin.osgi.launch
-JPM-Command:				osgi
-
+JPM-Command:				vaadinR6
 
 -runrequires: \
 	osgi.identity;filter:='(osgi.identity=com.vaadin.osgi.provider)',\
