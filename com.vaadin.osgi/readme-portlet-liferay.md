@@ -46,7 +46,7 @@ Start your OSGi application and point a browser to <http://localhost:8080/system
 
 You find a row called "Vaadin Server Config". Press the "add" button. Then following form is shown. 
 
-![Apache Felix web console](docu/WebConsole.png "Apache Felix web console") 
+![Apache Felix web console](docu/WebConsole-portlet.png "Apache Felix web console") 
 
 Put the value of `Constants.PROP__VAADIN_CONFIG` (eg. sample.addressbook) into the first field "config name" and specify an alias; eg. "/addr".
 All other fields are optional. If you press the "save" button, your Vaadin application will startup.
