@@ -9,3 +9,4 @@ Private-Package:  \
 	com.vaadin.osgi.example.addressbook
 	
 -includeresource: {readme.md=readme-servlet.md}, {configuration/configuration.json=sample-resources/addressbook/servlet-configuration.json}
+Bundle-Version: 1.0.0.${tstamp}

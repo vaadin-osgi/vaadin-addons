@@ -15,3 +15,5 @@ Private-Package: \
 	com.vaadin.osgi.common
 
 -includeresource: {readme.md=readme-servlet.md}
+
+Bundle-Version: 1.0.0.${tstamp}

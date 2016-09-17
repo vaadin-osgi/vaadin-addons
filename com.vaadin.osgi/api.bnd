@@ -9,3 +9,4 @@ Export-Package: com.vaadin.osgi.api
 
 Require-Capability: \
 	compile-only
+Bundle-Version: 1.0.0.${tstamp}

@@ -2,3 +2,9 @@
 # This file is left open for you to define your macros
 #
 -connection-settings: ${.}/settings.xml
+
+-plugin.6.Local: \
+        aQute.bnd.repository.maven.provider.MavenBndRepository; \
+            name                =       Local ; \
+
+-buildrepo: Local

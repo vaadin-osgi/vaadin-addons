@@ -44,7 +44,6 @@ test-cases: 			${classes;NAMED;*Test}
             releaseUrl			=   http://maven.lunifera.org:8086/nexus/content/repositories/releases/ ; \
     		snapshotUrl			=   http://maven.lunifera.org:8086/nexus/content/repositories/snapshots/ ; \
 			name				=	Release
-			
 
 # Temporary bug fix for bndtools 
 # Java 1.8

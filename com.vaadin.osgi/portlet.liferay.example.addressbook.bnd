@@ -10,3 +10,4 @@ Private-Package:  \
 	
 	
 -includeresource: {readme.md=readme-portlet-liferay.md}, {configuration/configuration.json=sample-resources/addressbook/portlet-configuration.json}
+Bundle-Version: 1.0.0.${tstamp}
