@@ -1,8 +1,8 @@
-# com.vaadin.servlet.provider
+# com.vaadin.osgi.portlet.liferay.provider
 
 These bundles offer a Vaadin OSGi R6 brige based on the OSGi prototype scope. It is heavily based on Configuration Manager. Configurations can easily be done using the Apache Felix web console or by a JSON File.
 
-The main goal of this implementation is to provide a very simple way to create OSGi applications based on Vaadin. The AddressBookUi sample shows how easy it is to create a new application.
+The main goal of this implementation is to provide a very simple way to create OSGi portlets based on Vaadin. The AddressBookUi sample shows how easy it is to create a new portlet.
 
 ## Your own application
 
@@ -46,7 +46,7 @@ Start your OSGi application and point a browser to <http://localhost:8080/system
 
 You find a row called "Vaadin Server Config". Press the "add" button. Then following form is shown. 
 
-![Apache Felix web console](docu/WebConsole.png "Apache Felix we bconsole") 
+![Apache Felix web console](docu/WebConsole.png "Apache Felix web console") 
 
 Put the value of `Constants.PROP__VAADIN_CONFIG` (eg. sample.addressbook) into the first field "config name" and specify an alias; eg. "/addr".
 All other fields are optional. If you press the "save" button, your Vaadin application will startup.
@@ -66,8 +66,8 @@ Create a file /configuration/configuration.json in any bundle. And put in the fo
 	[
 		{
 			"description":				"Config for Addressbook Sample",
-			"service.pid":				"com.vaadin.osgi.servlet.sample.addressbook",
-      		"service.factoryPid":		"com.vaadin.osgi.servlet.provider",
+			"service.pid":				"com.vaadin.osgi.portlet.liferay.sample.addressbook",
+      		"service.factoryPid":		"com.vaadin.osgi.portlet.liferay.provider",
 			"configName":				"sample.addressbook",
 			"alias":					"/addr",
 			"contextPath":				"/myApp"
@@ -93,11 +93,11 @@ After these steps you should have a clean workspace without any errors.
 ## Debug addressbook example
 To debug the application... 
 
-1. Open the `servlet.debug.bndrun`
+1. Open the `portlet.liferay.debug.bndrun`
 2. Press "resolve" -> everything should be fine
 3. Press the debug icon
 
-The configuration is done by  `sample-resources/addressbook/servlet-configuration.json`. You may change it using the WebConsole.
+The configuration is done by  `sample-resources/addressbook/portlet-configuration.json`. You may change it using the WebConsole.
 
 Point your browser to <http://localhost:8080/myApp/addr>.
 

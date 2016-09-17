@@ -1,4 +1,4 @@
-# com.vaadin.servlet.provider
+# com.vaadin.osgi.servlet.provider
 
 These bundles offer a Vaadin OSGi R6 brige based on the OSGi prototype scope. It is heavily based on Configuration Manager. Configurations can easily be done using the Apache Felix web console or by a JSON File.
 
