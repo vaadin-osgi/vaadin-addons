@@ -9,5 +9,3 @@ Export-Package: com.vaadin.osgi.api
 
 Require-Capability: \
 	compile-only
-
--includeresource: {readme.md}

@@ -11,7 +11,7 @@ Export-Package:  \
 	com.vaadin.osgi.api
 
 Private-Package: \
-	com.vaadin.osgi.servlet.provider,\
-	com.vaadin.osgi.common
+	com.vaadin.osgi.common,\
+	com.vaadin.osgi.portlet.liferay.provider
 
--includeresource: {readme.md=readme-servlet.md}
+-includeresource: {readme.md=readme-portlet-liferay.md}

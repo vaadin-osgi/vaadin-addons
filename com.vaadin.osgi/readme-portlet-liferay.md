@@ -1,4 +1,4 @@
-# 
+# com.vaadin.servlet.provider
 
 These bundles offer a Vaadin OSGi R6 brige based on the OSGi prototype scope. It is heavily based on Configuration Manager. Configurations can easily be done using the Apache Felix web console or by a JSON File.
 
@@ -66,8 +66,8 @@ Create a file /configuration/configuration.json in any bundle. And put in the fo
 	[
 		{
 			"description":				"Config for Addressbook Sample",
-			"service.pid":				"com.vaadin.osgi.sample.addressbook",
-			"service.factoryPid":		"com.vaadin.osgi.provider",
+			"service.pid":				"com.vaadin.osgi.servlet.sample.addressbook",
+      		"service.factoryPid":		"com.vaadin.osgi.servlet.provider",
 			"configName":				"sample.addressbook",
 			"alias":					"/addr",
 			"contextPath":				"/myApp"
@@ -97,7 +97,7 @@ To debug the application...
 2. Press "resolve" -> everything should be fine
 3. Press the debug icon
 
-The configuration is done by  `sample-resources/addressbook/configuration.json`. You may change it using the WebConsole.
+The configuration is done by  `sample-resources/addressbook/servlet-configuration.json`. You may change it using the WebConsole.
 
 Point your browser to <http://localhost:8080/myApp/addr>.
 

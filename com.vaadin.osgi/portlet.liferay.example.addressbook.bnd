@@ -9,4 +9,4 @@ Private-Package:  \
 	com.vaadin.osgi.example.addressbook
 	
 	
--includeresource: {readme.md}, {configuration/configuration.json=sample-resources/addressbook/configuration.json}
+-includeresource: {readme.md=readme-portlet-liferay.md}, {configuration/configuration.json=sample-resources/addressbook/portlet-configuration.json}

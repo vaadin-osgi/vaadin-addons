@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.vaadin.osgi.servlet.provider;
+package com.vaadin.osgi.portlet.liferay.provider;
 
 import org.osgi.framework.Bundle;
 import org.osgi.framework.ServiceObjects;
@@ -21,7 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vaadin.osgi.api.OSGiConstants;
-import com.vaadin.osgi.servlet.provider.OSGiServlet.LocalVaadinServletService;
+import com.vaadin.osgi.portlet.liferay.provider.OSGiPortlet.LocalVaadinPortletService;
 import com.vaadin.server.ClientConnector.DetachEvent;
 import com.vaadin.server.ClientConnector.DetachListener;
 import com.vaadin.server.UIClassSelectionEvent;
@@ -66,7 +66,7 @@ public class OSGiUIProvider extends UIProvider {
 		final ServiceObjects<UI> serviceObjects = _serviceObjects;
 		final UI ui = serviceObjects.getService();
 
-		LocalVaadinServletService service = (LocalVaadinServletService) event.getRequest().getService();
+		LocalVaadinPortletService service = (LocalVaadinPortletService) event.getRequest().getService();
 		applyPageTitle(service, ui);
 
 		ui.addDetachListener(new DetachListener() {
@@ -79,7 +79,7 @@ public class OSGiUIProvider extends UIProvider {
 		return ui;
 	}
 
-	private void applyPageTitle(LocalVaadinServletService service, UI ui) {
+	private void applyPageTitle(LocalVaadinPortletService service, UI ui) {
 		String title = service.getConfiguration().pageTitle();
 		if (title != null && !title.equals("")) {
 			ui.getPage().setTitle(title);
@@ -88,7 +88,7 @@ public class OSGiUIProvider extends UIProvider {
 
 	@Override
 	public String getTheme(UICreateEvent event) {
-		LocalVaadinServletService service = (LocalVaadinServletService) event.getRequest().getService();
+		LocalVaadinPortletService service = (LocalVaadinPortletService) event.getRequest().getService();
 		String theme = service.getConfiguration().theme();
 		if (theme == null || theme.equals("")) {
 			theme = super.getTheme(event);
@@ -98,7 +98,7 @@ public class OSGiUIProvider extends UIProvider {
 
 	@Override
 	public String getPageTitle(UICreateEvent event) {
-		LocalVaadinServletService service = (LocalVaadinServletService) event.getRequest().getService();
+		LocalVaadinPortletService service = (LocalVaadinPortletService) event.getRequest().getService();
 		String title = service.getConfiguration().pageTitle();
 		if (title == null || title.equals("")) {
 			title = super.getPageTitle(event);
@@ -108,7 +108,7 @@ public class OSGiUIProvider extends UIProvider {
 
 	@Override
 	public PushMode getPushMode(UICreateEvent event) {
-		LocalVaadinServletService service = (LocalVaadinServletService) event.getRequest().getService();
+		LocalVaadinPortletService service = (LocalVaadinPortletService) event.getRequest().getService();
 		com.vaadin.osgi.common.PushMode pushMode = service.getConfiguration().pushMode();
 		if (pushMode == null) {
 			return super.getPushMode(event);
@@ -118,12 +118,16 @@ public class OSGiUIProvider extends UIProvider {
 
 	@Override
 	public Transport getPushTransport(UICreateEvent event) {
-		LocalVaadinServletService service = (LocalVaadinServletService) event.getRequest().getService();
+		LocalVaadinPortletService service = (LocalVaadinPortletService) event.getRequest().getService();
 		com.vaadin.osgi.common.PushTransport pushTransport = service.getConfiguration().pushTransport();
 		if (pushTransport == null) {
 			return super.getPushTransport(event);
 		}
 		return Transport.valueOf(pushTransport.name());
+	}
+
+	public String getPortletName() {
+		return _uiClass.getName();
 	}
 
 }

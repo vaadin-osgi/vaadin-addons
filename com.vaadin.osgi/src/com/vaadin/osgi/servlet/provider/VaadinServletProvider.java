@@ -46,12 +46,12 @@ import com.vaadin.ui.UI;
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 
 @Component(immediate = true, configurationPolicy = ConfigurationPolicy.REQUIRE, configurationPid = {
-		"com.vaadin.osgi.provider" })
+		"com.vaadin.osgi.servlet.provider" })
 @Designate(ocd = Configuration.class, factory = true)
 @RequireConfigurerExtender
-public class VaadinServerProvider {
+public class VaadinServletProvider {
 
-	static final Logger LOGGER = LoggerFactory.getLogger(StaticResources.class);
+	static final Logger LOGGER = LoggerFactory.getLogger(VaadinServletProvider.class);
 
 	Configuration config;
 	ComponentContext context;
@@ -197,7 +197,7 @@ public class VaadinServerProvider {
 			servletReg.unregister();
 			servletReg = null;
 		}
-		
+
 		if (contextReg != null) {
 			contextReg.unregister();
 			contextReg = null;

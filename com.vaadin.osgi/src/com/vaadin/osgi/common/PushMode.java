@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.vaadin.osgi.servlet.provider;
+package com.vaadin.osgi.common;
 
 /**
  * The mode of bidirectional ("push") communication that is in use.
