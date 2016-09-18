@@ -44,7 +44,7 @@ This is a pretty simple way to configure a Vaadin application. See <http://felix
 As mentioned above, you have implemented the UI class, then remember the value of the property `Constants.PROP__VAADIN_CONFIG` .
 Start your OSGi application and point a browser to <http://localhost:8080/system/console/configMgr>. Use "admin" and "admin" for the credentials.
 
-You find a row called "Vaadin Server Config". Press the "add" button. Then following form is shown. 
+You find a row called "Vaadin Servlet Config". Press the "add" button. Then following form is shown. 
 
 ![Apache Felix web console](docu/WebConsole-servlet.png "Apache Felix we bconsole") 
 
@@ -59,7 +59,7 @@ The Vaadin Addon uses the enRoute simple configurer:
 
 This bundle is aware about JSON files located in the folder /configuration. You need to specify the the values from the configuration (same as in webconsole) in the JSON file.
 
-On startup of the server, the enRoute simple configurer finds the configuration and will do all required calls to the ConfigAdmin for you.
+On startup of the framework, the enRoute simple configurer finds the configuration and will do all required calls to the ConfigAdmin for you.
 
 Create a file /configuration/configuration.json in any bundle. And put in the following content (Note that the `service.pid` is unique. Every configuration requires their unique pid. The `service.factoryPid` is a constant):
 
