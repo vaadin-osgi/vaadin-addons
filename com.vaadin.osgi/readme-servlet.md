@@ -39,9 +39,9 @@ There are 3 ways available to create a proper configuration:
 3.  Use the API of the ConfigAdmin
 
 #### Apache Felix web console
-This is a pretty simple way to configure a Vaadin application. See <http://felix.apache.org/documentation/subprojects/apache-felix-web-console.html> for details on how to install the web console. 
+This is a pretty simple way to configure a Vaadin application. See <http://felix.apache.org/documentation/subprojects/apache-felix-web-console.html> for details about the web console. (The web console is automatically installed! see *.bndrun files) 
 
-When the Apache Felix web console is installed and you have implemented the UI class, then remember the value of the property `Constants.PROP__VAADIN_CONFIG` .
+As mentioned above, you have implemented the UI class, then remember the value of the property `Constants.PROP__VAADIN_CONFIG` .
 Start your OSGi application and point a browser to <http://localhost:8080/system/console/configMgr>. Use "admin" and "admin" for the credentials.
 
 You find a row called "Vaadin Server Config". Press the "add" button. Then following form is shown. 
