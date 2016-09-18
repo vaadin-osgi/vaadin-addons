@@ -57,7 +57,7 @@ Point your browser to <http://localhost:8080/addr> and your Vaadin UI shows up. 
 The Vaadin Addon uses the enRoute simple configurer: 
 <https://github.com/osgi/osgi.enroute.bundles/tree/master/osgi.enroute.configurer.simple.provider>  
 
-This bundle is aware about JSON files located in the folder /configuration. You need to specify the the values from the configuration (same as in webconsole) in the JSON file.
+This bundle is aware about JSON files located in the folder /configuration. You need to specify the values from the configuration (same as in webconsole) in the JSON file.
 
 On startup of the framework, the enRoute simple configurer finds the configuration and will do all required calls to the ConfigAdmin for you.
 
