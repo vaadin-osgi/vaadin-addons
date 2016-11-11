@@ -26,7 +26,9 @@ import com.vaadin.server.DeploymentConfiguration;
 import com.vaadin.server.ServiceException;
 import com.vaadin.server.UIProvider;
 import com.vaadin.server.VaadinPortlet;
+import com.vaadin.server.VaadinPortletRequest;
 import com.vaadin.server.VaadinPortletService;
+import com.vaadin.server.VaadinPortletSession;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinSession;
 
@@ -118,7 +120,7 @@ public class OSGiPortlet extends VaadinPortlet {
 
 		@Override
 		protected VaadinSession createVaadinSession(VaadinRequest request) throws ServiceException {
-			VaadinSession session = new VaadinSession(request.getService());
+			VaadinSession session = new VaadinPortletSession(this);
 			session.addUIProvider(uiProvider);
 			return session;
 		}
