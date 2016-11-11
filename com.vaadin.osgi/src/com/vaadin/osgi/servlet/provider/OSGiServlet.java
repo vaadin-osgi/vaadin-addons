@@ -55,19 +55,20 @@ public class OSGiServlet extends VaadinServlet {
 		}
 		initParameters.setProperty(SERVLET_PARAMETER_PRODUCTION_MODE, Boolean.toString(config.productionMode()));
 
-		if (config.pushMode() != null) {
-			initParameters.setProperty(SERVLET_PARAMETER_PUSH_MODE, config.pushMode().name());
-		}
-
-		if (config.resourceCacheTime() >= 0) {
-			initParameters.setProperty(SERVLET_PARAMETER_RESOURCE_CACHE_TIME,
-					Integer.toString(config.resourceCacheTime()));
-		}
-
-		if (config.heartbeatInterval() != 0) {
-			initParameters.setProperty(SERVLET_PARAMETER_HEARTBEAT_INTERVAL,
-					Integer.toString(config.heartbeatInterval()));
-		}
+		// TODO vaadin-osgi
+//		if (config.pushMode() != null) {
+//			initParameters.setProperty(SERVLET_PARAMETER_PUSH_MODE, config.pushMode().name());
+//		}
+//
+//		if (config.resourceCacheTime() >= 0) {
+//			initParameters.setProperty(SERVLET_PARAMETER_RESOURCE_CACHE_TIME,
+//					Integer.toString(config.resourceCacheTime()));
+//		}
+//
+//		if (config.heartbeatInterval() != 0) {
+//			initParameters.setProperty(SERVLET_PARAMETER_HEARTBEAT_INTERVAL,
+//					Integer.toString(config.heartbeatInterval()));
+//		}
 	}
 
 	@Override

@@ -1,0 +1,5 @@
+Bundle-Description: \
+	Provides the main ui of the services sample. \
+
+Bundle-Version: 1.0.0.${tstamp}
+Private-Package: com.vaadin.osgi.example.services.core

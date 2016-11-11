@@ -1,0 +1,5 @@
+Bundle-Description: \
+	Provides the API of services sample. \
+
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: com.vaadin.osgi.example.services.api

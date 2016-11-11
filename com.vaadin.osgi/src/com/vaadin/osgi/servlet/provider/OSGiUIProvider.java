@@ -109,7 +109,9 @@ public class OSGiUIProvider extends UIProvider {
 	@Override
 	public PushMode getPushMode(UICreateEvent event) {
 		LocalVaadinServletService service = (LocalVaadinServletService) event.getRequest().getService();
-		com.vaadin.osgi.common.PushMode pushMode = service.getConfiguration().pushMode();
+		// TODO vaadin-osgi
+//		com.vaadin.osgi.common.PushMode pushMode = service.getConfiguration().pushMode();
+		com.vaadin.osgi.common.PushMode pushMode = com.vaadin.osgi.common.PushMode.AUTOMATIC;
 		if (pushMode == null) {
 			return super.getPushMode(event);
 		}
