@@ -1,0 +1,7 @@
+{
+ "revisionRefs":[{
+  "artifactId":"commons-logging","baseline":"1.2.0","bsn":"org.apache.commons.logging","created":1404583913415,"description":"Apache Commons Logging is a thin adapter allowing configurable bridging to other,    well known logging systems.","groupId":"commons-logging","md5":"040B4B4D8EAC886F6B4A2A3BD2F31B00","name":"Apache Commons Logging","phase":"MASTER","revision":"4BFC12ADFE4842BF07B657F0369C4CB522955686","size":61829,"urls":["http://repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"],"version":"1.2"
+ },{
+  "artifactId":"org.apache.servicemix.bundles.commons-beanutils","baseline":"1.8.3","bsn":"org.apache.servicemix.bundles.commons-beanutils","created":1377755708862,"description":"This OSGi bundle wraps commons-beanutils 1.8.3 jar file.","groupId":"org.apache.servicemix.bundles","md5":"26B300A8C8B523F86FB2B2E04397AF0D","name":"Apache ServiceMix :: Bundles :: commons-beanutils","phase":"MASTER","qualifier":"2","revision":"42E4FE0D7AFD6038E8BCCBFA5A9CD6AE65B887D1","size":253572,"urls":["http://repo1.maven.org/maven2/org/apache/servicemix/bundles/org.apache.servicemix.bundles.commons-beanutils/1.8.3_2/org.apache.servicemix.bundles.commons-beanutils-1.8.3_2.jar"],"version":"1.8.3_2"
+ }]
+}

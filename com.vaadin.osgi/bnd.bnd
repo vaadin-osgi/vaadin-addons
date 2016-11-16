@@ -19,7 +19,9 @@ Bundle-License: \
 	com.vaadin.shared;version=7.6.8,\
 	org.jsoup;version=1.9,\
 	com.vaadin.client-compiled;version=7.6,\
-	javax.portlet;version=0.0
+	javax.portlet;version=0.0,\
+	org.apache.servicemix.bundles.commons-beanutils,\
+	org.apache.commons.logging
 -testpath: \
 	osgi.enroute.junit.wrapper;version=4.12
 

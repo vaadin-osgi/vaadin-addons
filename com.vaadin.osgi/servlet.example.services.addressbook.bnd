@@ -2,4 +2,10 @@ Bundle-Description: \
 	Provides the main ui of the services sample. \
 
 Bundle-Version: 1.0.0.${tstamp}
-Private-Package: com.vaadin.osgi.example.services.addressbook
+Private-Package: \
+	com.vaadin.osgi.example.services.addressbook,\
+	com.vaadin.osgi.example.services.addressbook.backend
+Import-Package: \
+	org.apache.commons.beanutils,\
+	*
+-includeresource: {configuration/configuration.json=sample-resources/addressbook/servlet-sample-services-configuration.json}

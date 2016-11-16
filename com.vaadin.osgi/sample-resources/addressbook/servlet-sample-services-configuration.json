@@ -1,0 +1,11 @@
+[
+   {
+   	  "description":						"Config for Addressbook Sample",
+      "service.pid":						"com.vaadin.osgi.servlet.sample.addressbook",
+      "service.factoryPid":					"com.vaadin.osgi.servlet.provider",
+      "configName":							"sample.services.core",
+	  "alias":								"/addr",
+	  "contextPath":						"/myApp",
+	  "pushMode":							"AUTOMATIC"
+   }
+]

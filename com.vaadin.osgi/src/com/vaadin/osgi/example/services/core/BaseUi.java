@@ -22,6 +22,7 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
+import org.osgi.service.component.annotations.ReferenceScope;
 import org.osgi.service.component.annotations.ServiceScope;
 
 import com.vaadin.annotations.Push;
@@ -71,7 +72,7 @@ public class BaseUi extends UI {
 
 	}
 
-	@Reference(cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC, unbind = "removeSubApplication")
+	@Reference(cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC, scope = ReferenceScope.PROTOTYPE_REQUIRED, unbind = "removeSubApplication")
 	void addSubApplication(ISubApplication subApplication) {
 		subApps.add(subApplication);
 
@@ -91,7 +92,6 @@ public class BaseUi extends UI {
 	 */
 	void notifySubApplicationAdded(ISubApplication subApplication) {
 		access(new Runnable() {
-
 			@Override
 			public void run() {
 				if (tabSheet.getTab(emptyLabel) != null) {
@@ -108,9 +108,7 @@ public class BaseUi extends UI {
 	 * @param subApplication
 	 */
 	void notifySubApplicationRemoved(ISubApplication subApplication) {
-
 		access(new Runnable() {
-
 			@Override
 			public void run() {
 				Tab tab = tabSheet.getTab(subApplication.getContent());

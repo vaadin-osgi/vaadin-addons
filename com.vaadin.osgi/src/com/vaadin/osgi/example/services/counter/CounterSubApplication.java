@@ -1,13 +1,14 @@
-package com.vaadin.osgi.example.services.grid;
+package com.vaadin.osgi.example.services.counter;
 
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.ServiceScope;
 
 import com.vaadin.osgi.example.services.api.ISubApplication;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 
-@Component
+@Component(scope=ServiceScope.PROTOTYPE)
 public class CounterSubApplication extends CustomComponent implements ISubApplication {
 
 	private TextField counterText;
