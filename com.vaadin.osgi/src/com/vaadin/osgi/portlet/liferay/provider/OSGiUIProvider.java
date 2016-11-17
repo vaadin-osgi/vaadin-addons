@@ -20,8 +20,8 @@ import org.osgi.framework.ServiceObjects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vaadin.osgi.api.OSGiConstants;
 import com.vaadin.osgi.portlet.liferay.provider.OSGiPortlet.LocalVaadinPortletService;
+import com.vaadin.osgi.servlet.api.OSGiConstants;
 import com.vaadin.server.ClientConnector.DetachEvent;
 import com.vaadin.server.ClientConnector.DetachListener;
 import com.vaadin.server.UIClassSelectionEvent;
@@ -109,7 +109,7 @@ public class OSGiUIProvider extends UIProvider {
 	@Override
 	public PushMode getPushMode(UICreateEvent event) {
 		LocalVaadinPortletService service = (LocalVaadinPortletService) event.getRequest().getService();
-		com.vaadin.osgi.common.PushMode pushMode = service.getConfiguration().pushMode();
+		com.vaadin.osgi.servlet.provider.PushMode pushMode = service.getConfiguration().pushMode();
 		if (pushMode == null) {
 			return super.getPushMode(event);
 		}
@@ -119,7 +119,7 @@ public class OSGiUIProvider extends UIProvider {
 	@Override
 	public Transport getPushTransport(UICreateEvent event) {
 		LocalVaadinPortletService service = (LocalVaadinPortletService) event.getRequest().getService();
-		com.vaadin.osgi.common.PushTransport pushTransport = service.getConfiguration().pushTransport();
+		com.vaadin.osgi.servlet.provider.PushTransport pushTransport = service.getConfiguration().pushTransport();
 		if (pushTransport == null) {
 			return super.getPushTransport(event);
 		}

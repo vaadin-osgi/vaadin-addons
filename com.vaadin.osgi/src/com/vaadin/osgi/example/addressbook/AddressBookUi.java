@@ -19,7 +19,7 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ServiceScope;
 
 import com.vaadin.annotations.Push;
-import com.vaadin.osgi.api.OSGiConstants;
+import com.vaadin.osgi.servlet.api.OSGiConstants;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;

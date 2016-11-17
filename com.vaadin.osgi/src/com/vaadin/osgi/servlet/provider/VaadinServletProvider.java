@@ -27,6 +27,7 @@ import org.osgi.framework.ServiceFactory;
 import org.osgi.framework.ServiceObjects;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
+import org.osgi.namespace.implementation.ImplementationNamespace;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -40,15 +41,17 @@ import org.osgi.util.tracker.ServiceTrackerCustomizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vaadin.osgi.api.OSGiConstants;
+import com.vaadin.osgi.servlet.api.OSGiConstants;
 import com.vaadin.ui.UI;
 
+import aQute.bnd.annotation.headers.ProvideCapability;
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 
 @Component(immediate = true, configurationPolicy = ConfigurationPolicy.REQUIRE, configurationPid = {
 		"com.vaadin.osgi.servlet.provider" })
 @Designate(ocd = Configuration.class, factory = true)
 @RequireConfigurerExtender
+@ProvideCapability(ns = ImplementationNamespace.IMPLEMENTATION_NAMESPACE, name = OSGiConstants.OSGI_PROVIDER_NAME, version = OSGiConstants.OSGI_PROVIDER_VERSION)
 public class VaadinServletProvider {
 
 	static final Logger LOGGER = LoggerFactory.getLogger(VaadinServletProvider.class);

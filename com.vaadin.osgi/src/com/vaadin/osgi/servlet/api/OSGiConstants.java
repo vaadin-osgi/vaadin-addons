@@ -13,9 +13,19 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.vaadin.osgi.api;
+package com.vaadin.osgi.servlet.api;
 
 public interface OSGiConstants {
+
+	/**
+	 * The name of the provider for capabilities and requirements.
+	 */
+	String OSGI_PROVIDER_NAME = "com.vaadin.osgi.servlet";
+
+	/**
+	 * The version of the provider for capabilities and requirements.
+	 */
+	String OSGI_PROVIDER_VERSION = "1.0.0";
 
 	/**
 	 * This property is required to map the UI class to the Vaadin Server. It

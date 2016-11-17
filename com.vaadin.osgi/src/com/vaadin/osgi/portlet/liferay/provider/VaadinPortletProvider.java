@@ -36,7 +36,7 @@ import org.osgi.util.tracker.ServiceTrackerCustomizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vaadin.osgi.api.OSGiConstants;
+import com.vaadin.osgi.servlet.api.OSGiConstants;
 import com.vaadin.ui.UI;
 
 import osgi.enroute.configurer.api.RequireConfigurerExtender;

@@ -5,7 +5,7 @@
 Bundle-Description: \
 	 API for com.vaadin.osgi.
 	
-Export-Package: com.vaadin.osgi.api
+Export-Package: com.vaadin.osgi.servlet.api
 
 Require-Capability: \
 	compile-only

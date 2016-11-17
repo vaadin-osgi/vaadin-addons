@@ -21,7 +21,6 @@
 	com.vaadin.osgi.servlet.example.services.api;version=snapshot,\
 	com.vaadin.osgi.servlet.example.services.core;version=snapshot,\
 	com.vaadin.osgi.servlet.example.services.counter;version=snapshot,\
-	com.vaadin.osgi.servlet.provider;version=snapshot,\
 	com.vaadin.push;version='[7.6.8,7.6.9)',\
 	com.vaadin.server;version='[7.6.8,7.6.9)',\
 	com.vaadin.shared;version='[7.6.8,7.6.9)',\
@@ -56,10 +55,10 @@
 	osgi.enroute.web.simple.provider;version='[1.3.3,1.3.4)',\
 	osgi.enroute.webconsole.xray.provider;version='[2.0.0,2.0.1)',\
 	org.apache.servicemix.bundles.commons-beanutils;version='[1.8.3,1.8.4)',\
-	org.apache.commons.logging;version='[1.2.0,1.2.1)'
+	org.apache.commons.logging;version='[1.2.0,1.2.1)',\
+	com.vaadin.osgi.servlet.provider;version=snapshot
 -runrequires: \
 	osgi.identity;filter:='(osgi.identity=osgi.enroute.webconsole.xray.provider)',\
-	osgi.identity;filter:='(osgi.identity=com.vaadin.osgi.servlet.provider)',\
 	osgi.identity;filter:='(osgi.identity=com.vaadin.server)',\
 	osgi.identity;filter:='(osgi.identity=com.vaadin.client-compiled)',\
 	osgi.identity;filter:='(osgi.identity=com.vaadin.shared)',\

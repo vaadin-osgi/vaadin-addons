@@ -18,9 +18,9 @@ package com.vaadin.osgi.portlet.liferay.provider;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
-import com.vaadin.osgi.api.OSGiConstants;
-import com.vaadin.osgi.common.PushMode;
-import com.vaadin.osgi.common.PushTransport;
+import com.vaadin.osgi.servlet.api.OSGiConstants;
+import com.vaadin.osgi.servlet.provider.PushMode;
+import com.vaadin.osgi.servlet.provider.PushTransport;
 
 @ObjectClassDefinition(name = "Vaadin Portlet Config", description = "Configures the Vaadin Portlet")
 public @interface Configuration {
