@@ -18,15 +18,15 @@ package com.vaadin.osgi.portlet.liferay.provider;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
-import com.vaadin.osgi.servlet.api.OSGiConstants;
+import com.vaadin.osgi.servlet.api.Constants;
 import com.vaadin.osgi.servlet.provider.PushMode;
 import com.vaadin.osgi.servlet.provider.PushTransport;
 
 @ObjectClassDefinition(name = "Vaadin Portlet Config", description = "Configures the Vaadin Portlet")
 public @interface Configuration {
 
-	@AttributeDefinition(name = "config name", defaultValue = OSGiConstants.DEFAULT_CONFIG_NAME, description = "The unique name of the config. Add the property com.vaadin.config to the UI component to address the proper portlet instance.", required = true)
-	String configName() default OSGiConstants.DEFAULT_CONFIG_NAME;
+	@AttributeDefinition(name = "config name", defaultValue = Constants.DEFAULT_CONFIG_NAME, description = "The unique name of the config. Add the property com.vaadin.config to the UI component to address the proper portlet instance.", required = true)
+	String configName() default Constants.DEFAULT_CONFIG_NAME;
 
 	@AttributeDefinition(name = "displayName", defaultValue = "My Portlet", description = "The displayName", required = false)
 	String displayName() default "My Portlet";

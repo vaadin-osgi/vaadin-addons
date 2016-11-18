@@ -15,7 +15,7 @@
  */
 package com.vaadin.osgi.servlet.api;
 
-public interface OSGiConstants {
+public interface Constants {
 
 	/**
 	 * The name of the provider for capabilities and requirements.

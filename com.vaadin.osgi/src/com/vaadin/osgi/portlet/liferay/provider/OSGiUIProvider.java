@@ -21,7 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vaadin.osgi.portlet.liferay.provider.OSGiPortlet.LocalVaadinPortletService;
-import com.vaadin.osgi.servlet.api.OSGiConstants;
+import com.vaadin.osgi.servlet.api.Constants;
 import com.vaadin.server.ClientConnector.DetachEvent;
 import com.vaadin.server.ClientConnector.DetachListener;
 import com.vaadin.server.UIClassSelectionEvent;
@@ -50,7 +50,7 @@ public class OSGiUIProvider extends UIProvider {
 		Bundle registringBundle = serviceObjects.getServiceReference().getBundle();
 		try {
 			_uiClass = (Class<UI>) registringBundle.loadClass(
-					(String) serviceObjects.getServiceReference().getProperty(OSGiConstants.PROP__VAADIN_UI_CLASS));
+					(String) serviceObjects.getServiceReference().getProperty(Constants.PROP__VAADIN_UI_CLASS));
 		} catch (ClassNotFoundException e) {
 			LOGGER.error("{}", e);
 		}

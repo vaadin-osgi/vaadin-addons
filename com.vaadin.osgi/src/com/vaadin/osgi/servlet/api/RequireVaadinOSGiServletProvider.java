@@ -11,8 +11,8 @@ import aQute.bnd.annotation.headers.RequireCapability;
  * Require an implementation for the Vaadin OSGi provider.
  */
 @RequireCapability(ns = ImplementationNamespace.IMPLEMENTATION_NAMESPACE, filter = "(&("
-		+ ImplementationNamespace.IMPLEMENTATION_NAMESPACE + "=" + OSGiConstants.OSGI_PROVIDER_NAME
-		+ ")${frange;${version;==;" + OSGiConstants.OSGI_PROVIDER_VERSION + "}})")
+		+ ImplementationNamespace.IMPLEMENTATION_NAMESPACE + "=" + Constants.OSGI_PROVIDER_NAME
+		+ ")${frange;${version;==;" + Constants.OSGI_PROVIDER_VERSION + "}})")
 @Retention(RetentionPolicy.CLASS)
 public @interface RequireVaadinOSGiServletProvider {
 

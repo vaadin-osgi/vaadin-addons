@@ -36,7 +36,7 @@ import org.osgi.util.tracker.ServiceTrackerCustomizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vaadin.osgi.servlet.api.OSGiConstants;
+import com.vaadin.osgi.servlet.api.Constants;
 import com.vaadin.ui.UI;
 
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
@@ -90,13 +90,13 @@ public class VaadinPortletProvider {
 
 	/**
 	 * Create a filter to find the proper UI {@link ServiceObjects} based on the
-	 * {@link OSGiConstants#PROP__VAADIN_CONFIG}
+	 * {@link Constants#PROP__VAADIN_CONFIG}
 	 * 
 	 * @param config
 	 * @return
 	 */
 	protected Filter createUIFilter(Configuration config) {
-		String filter = String.format("(&(objectClass=com.vaadin.ui.UI)(%s=%s))", OSGiConstants.PROP__VAADIN_CONFIG,
+		String filter = String.format("(&(objectClass=com.vaadin.ui.UI)(%s=%s))", Constants.PROP__VAADIN_CONFIG,
 				config.configName());
 		try {
 			return context.getBundleContext().createFilter(filter);

@@ -18,13 +18,13 @@ package com.vaadin.osgi.servlet.provider;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
-import com.vaadin.osgi.servlet.api.OSGiConstants;
+import com.vaadin.osgi.servlet.api.Constants;
 
 @ObjectClassDefinition(name = "Vaadin Servlet Config", description = "Configures the Vaadin Servlet")
 public @interface Configuration {
 
-	@AttributeDefinition(name = "config name", defaultValue = OSGiConstants.DEFAULT_CONFIG_NAME, description = "The unique name of the config. Add the property com.vaadin.config to the UI component to address the proper server instance.", required = true)
-	String configName() default OSGiConstants.DEFAULT_CONFIG_NAME;
+	@AttributeDefinition(name = "config name", defaultValue = Constants.DEFAULT_CONFIG_NAME, description = "The unique name of the config. Add the property com.vaadin.config to the UI component to address the proper server instance.", required = true)
+	String configName() default Constants.DEFAULT_CONFIG_NAME;
 
 	@AttributeDefinition(name = "description", defaultValue = "", description = "Description about the application", required = false)
 	String description() default "";

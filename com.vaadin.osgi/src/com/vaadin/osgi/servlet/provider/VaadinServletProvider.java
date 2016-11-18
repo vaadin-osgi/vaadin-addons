@@ -41,7 +41,7 @@ import org.osgi.util.tracker.ServiceTrackerCustomizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vaadin.osgi.servlet.api.OSGiConstants;
+import com.vaadin.osgi.servlet.api.Constants;
 import com.vaadin.ui.UI;
 
 import aQute.bnd.annotation.headers.ProvideCapability;
@@ -51,7 +51,7 @@ import osgi.enroute.configurer.api.RequireConfigurerExtender;
 		"com.vaadin.osgi.servlet.provider" })
 @Designate(ocd = Configuration.class, factory = true)
 @RequireConfigurerExtender
-@ProvideCapability(ns = ImplementationNamespace.IMPLEMENTATION_NAMESPACE, name = OSGiConstants.OSGI_PROVIDER_NAME, version = OSGiConstants.OSGI_PROVIDER_VERSION)
+@ProvideCapability(ns = ImplementationNamespace.IMPLEMENTATION_NAMESPACE, name = Constants.OSGI_PROVIDER_NAME, version = Constants.OSGI_PROVIDER_VERSION)
 public class VaadinServletProvider {
 
 	static final Logger LOGGER = LoggerFactory.getLogger(VaadinServletProvider.class);
@@ -100,7 +100,7 @@ public class VaadinServletProvider {
 	}
 
 	protected Filter createUIFilter(Configuration config) {
-		String filter = String.format("(&(objectClass=com.vaadin.ui.UI)(%s=%s))", OSGiConstants.PROP__VAADIN_CONFIG,
+		String filter = String.format("(&(objectClass=com.vaadin.ui.UI)(%s=%s))", Constants.PROP__VAADIN_CONFIG,
 				config.configName());
 		try {
 			return context.getBundleContext().createFilter(filter);

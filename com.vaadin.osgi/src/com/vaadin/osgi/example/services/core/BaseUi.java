@@ -27,7 +27,7 @@ import org.osgi.service.component.annotations.ServiceScope;
 
 import com.vaadin.annotations.Push;
 import com.vaadin.osgi.example.services.api.ISubApplication;
-import com.vaadin.osgi.servlet.api.OSGiConstants;
+import com.vaadin.osgi.servlet.api.Constants;
 import com.vaadin.osgi.servlet.api.RequireVaadinOSGiServletProvider;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.shared.ui.label.ContentMode;
@@ -39,8 +39,8 @@ import com.vaadin.ui.VerticalLayout;
 
 @SuppressWarnings("serial")
 @Component(scope = ServiceScope.PROTOTYPE, service = UI.class, property = {
-		OSGiConstants.PROP__VAADIN_UI_CLASS + "=com.vaadin.osgi.example.services.core.BaseUi",
-		OSGiConstants.PROP__VAADIN_CONFIG + "=sample.services.core" })
+		Constants.PROP__VAADIN_UI_CLASS + "=com.vaadin.osgi.example.services.core.BaseUi",
+		Constants.PROP__VAADIN_CONFIG + "=sample.services.core" })
 @RequireVaadinOSGiServletProvider
 @Push
 public class BaseUi extends UI {
