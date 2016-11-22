@@ -114,6 +114,7 @@ public class BaseUi extends UI {
 			@Override
 			public void run() {
 				Tab tab = tabSheet.getTab(subApplication.getContent());
+
 				if (tab != null) {
 					tabSheet.removeTab(tab);
 				}
@@ -121,6 +122,8 @@ public class BaseUi extends UI {
 				if (tabSheet.getSelectedTab() == null) {
 					emptyLabelTab = tabSheet.addTab(emptyLabel, "start");
 				}
+
+				subApplication.destroy();
 			}
 		});
 	}

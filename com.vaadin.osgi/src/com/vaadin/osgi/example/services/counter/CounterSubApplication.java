@@ -1,5 +1,7 @@
 package com.vaadin.osgi.example.services.counter;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ServiceScope;
 
@@ -11,9 +13,10 @@ import com.vaadin.ui.UI;
 @Component(scope=ServiceScope.PROTOTYPE)
 public class CounterSubApplication extends CustomComponent implements ISubApplication {
 
-	private TextField counterText;
-	private UI ui;
-
+	TextField counterText;
+	UI ui;
+	AtomicBoolean active = new AtomicBoolean(true);
+	
 	@Override
 	public void attach() {
 		super.attach();
@@ -24,12 +27,16 @@ public class CounterSubApplication extends CustomComponent implements ISubApplic
 		
 		ui = getUI();
 
+		ui.addDetachListener(e -> {
+			active.set(false);
+		});
+		
 		new Thread(new Runnable() {
 			private int count;
 
 			@Override
 			public void run() {
-				while (true) {
+				while (active.get()) {
 					count++;
 					ui.access(new Runnable() {
 
@@ -43,6 +50,7 @@ public class CounterSubApplication extends CustomComponent implements ISubApplic
 					} catch (InterruptedException e) {
 					}
 				}
+				System.out.println("Stopped counter");
 			}
 		}).start();
 
@@ -58,4 +66,8 @@ public class CounterSubApplication extends CustomComponent implements ISubApplic
 		return this;
 	}
 
+	public void destroy() {
+		active.set(false);
+	}
+	
 }
