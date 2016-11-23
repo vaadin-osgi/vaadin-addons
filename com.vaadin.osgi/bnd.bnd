@@ -20,8 +20,8 @@ Bundle-License: \
 	org.jsoup;version=1.9,\
 	com.vaadin.client-compiled;version=7.6,\
 	javax.portlet;version=0.0,\
-	org.apache.servicemix.bundles.commons-beanutils,\
-	org.apache.commons.logging
+	org.apache.servicemix.bundles.commons-beanutils;version=1.8.3,\
+	org.apache.commons.logging;version=1.2.0
 -testpath: \
 	osgi.enroute.junit.wrapper;version=4.12
 
