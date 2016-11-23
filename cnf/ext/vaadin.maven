@@ -11,3 +11,4 @@ com.vaadin.external.google:guava:16.0.1.vaadin1
 com.vaadin.external.streamhtmlparser:streamhtmlparser-jsilver:0.0.10.vaadin1
 com.vaadin.external.atmosphere:atmosphere-runtime:2.2.7.vaadin1
 javax.portlet:portlet-api:2.0
+org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-beanutils:1.8.3
